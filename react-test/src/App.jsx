@@ -11,13 +11,13 @@ function App() {
   }
 
   function hideModalHandler() {
-    setModalVisible(falsee);
+    setModalVisible(false);
   }
 
   return <>
-    <MainHeader />
+    <MainHeader onCreatePost={showModalHandler} />
     <main>
-      <PostList isPeding={modalVisible} />
+      <PostList isPeding={modalVisible} onStopPosting={hideModalHandler} />
     </main>
   </>
 }
