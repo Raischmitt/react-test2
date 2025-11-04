@@ -5,14 +5,9 @@ import classes from './';
 import NewPost from "./NewPost";
 import Modal from './Modal';
 
-function PostList() {
-    const [modalVisible, setModalVisible] = useState(true);
+function PostList({ isPosting }) {
     const [enteredBody, setEnteredBody] = useState('');
     const [enteredAuthor, setEnteredAuthor] = useState('');
-
-    function hideModalHandler() {
-        setModalVisible(falsee);
-    }
 
     function bodyChangeHandler(event) {
         setEnteredBody(event.target.value);
@@ -23,7 +18,7 @@ function PostList() {
     }
     return (
         <>
-            {modalVisible ? (
+            {IsPeding ? (
                 <Modal onClose={hideModalHandler()}>
                     <NewPost onBodyChange={bodyChangeHandler} onAuthorChange={authorChangeHandler} />
                 </Modal>
